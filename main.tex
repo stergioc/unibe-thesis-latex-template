@@ -1,0 +1,303 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Masters/Doctoral Thesis 
+% LaTeX Template
+% Version 2.5 (27/8/17)
+%
+% This template was downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Version 2.x major modifications by:
+% Vel (vel@latextemplates.com)
+%
+% This template is based on a template by:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% Template license:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+10pt, % The default document font size, options: 10pt, 11pt, 12pt
+%oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+english, % ngerman for German
+singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+%liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+%toctotoc, % Uncomment to add the main table of contents to the table of contents
+%parskip, % Uncomment to add space between paragraphs
+% nohyperref, % Uncomment to not load the hyperref package
+headsepline, % Uncomment to get a line under the header
+%chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+%consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+]{MastersDoctoralThesis} % The class file specifying the document structure
+
+% \usepackage[hidelinks]{hyperref}
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+\usepackage{mathpazo} % Use the Palatino font by default
+
+\usepackage[backend=bibtex,style=ieee]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+
+% \usepackage[block=ragged,natbib=true]{biblatex}
+
+\usepackage{subcaption} % for subfigures
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows,fit,backgrounds, patterns}
+
+\usepackage[super]{nth}
+
+\addbibresource{references.bib} % The filename of the bibliography
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
+\usepackage{layout}
+
+%----------------------------------------------------------------------------------------
+%	TOC SETTINGS
+%----------------------------------------------------------------------------------------
+
+\setcounter{secnumdepth}{2} % only chapter and sections and subsections will be numbered
+\setcounter{tocdepth}{2}    % entries down to \subsections in the TOC
+
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	inner=2.5cm, % Inner margin
+	outer=3.8cm, % Outer margin
+	bindingoffset=.5cm, % Binding offset
+	top=1.5cm, % Top margin
+	bottom=1.5cm, % Bottom margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+\hyphenation{Mou-gia-ka-kou}
+
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+\thesistitle{Title of thesis} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\supervisor{Prof. Dr. \textsc{Surname} FirstName} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\coadvisor{Prof. Dr. \textsc{Surname} FirstName} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
+\degree{Doctor of Philosophy in XXX} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
+\author{\textsc{Surname} FirstName} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+
+\matriculation{00-000-000} % Your matriculation number, this is not currently used anywhere in the template, print it elsewhere with \matriculationnum
+
+\subject{SUBJECT} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \\subjectname
+\keywords{keyword1, keyword2} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\university{University of Bern} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
+\department{Faculty of XXX} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
+\group{Group Name} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\faculty{Graduate School for Cellular and Biomedical Sciences} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+
+
+\begin{document}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE 1
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+
+\hfill{\includegraphics[width=4.5cm]{Logo-unibe}}
+
+\begin{center}
+
+\vspace*{0.5cm}
+{\Large \facname \\ \textsc{\univname} \par}\vspace{1cm} % University name
+
+{\huge \bfseries \ttitle\par}\vspace{1cm} % Thesis title
+
+
+\large{PhD Thesis submitted by}\vspace{0.5cm}
+
+{\Large \bfseries \authorname \par}\vspace{0.5cm}
+
+\large{from }{\Large \bfseries Place of Origin & Canton \par}\vspace{0.5cm}
+
+\large{from }{\Large \bfseries Country of Origin \par}\vspace{0.5cm}
+
+\large{for the degree of XXX}\vspace{0.5cm}
+ 
+\vfill
+
+\large{Supervisor \\ \supname \\ Supervisor Institute/Department of YYY}\vspace{0.5cm}
+
+\large{Co-advisor \\ \examname \\  Co-advisor Institute/Department of YYY}\vspace{0.5cm}
+
+% % this is needed for the publication at the university of bern library
+% \footnotesize{Original document saved on the web server of the University Library of Bern\\}
+% \includegraphics[width=1.5cm]{cc88x31}\\
+% \footnotesize{This work is licensed under a \href{https://creativecommons.org/licenses/by-nc-nd/2.5/ch/}{Creative Commons Attribution-NonCommercial-NoDerivs 2.5 Switzerland License}.}
+\end{center}
+\end{titlepage}
+\cleardoublepage
+
+% %----------------------------------------------------------------------------------------
+% %	TITLE PAGES 2
+% %----------------------------------------------------------------------------------------
+% {
+% \pagenumbering{gobble}
+% \vspace*{5cm}
+% \begin{center}
+% \textbf{\Large{Copyright Notice}}
+% \end{center}
+
+% \noindent This document is licensed under the Creative Commons Attribution-Non-Commercial-No derivative works 2.5 Switzerland. 
+% \url{http://creativecommons.org/licenses/by-nc-nd/2.5/ch/} \\
+
+% \noindent\textbf{\large{You are free:}}\\
+% \noindent\textbf{Share.} copy and redistribute the material in any medium or format. \\
+
+% \noindent\textbf{\large{Under the following conditions:}}\\
+% \textbf{Attribution.} You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.  \\
+% \textbf{Non-Commercial.} You may not use the material for commercial purposes.  \\
+% \textbf{No derivative works.} If you remix, transform, or build upon the material, you may not distribute the modified material.  \\
+
+% \noindent For any reuse or distribution, you must make clear to others the license terms of this work.  \\
+
+% \noindent Any of these conditions can be waived if you get permission from the copyright holder. \\
+
+% \noindent Nothing in this license impairs or restricts the author’s moral rights according to Swiss law. \\
+
+% \noindent The detailed license agreement can be found at: \url{http://creativecommons.org/licenses/by-nc-nd/2.5/ch/legalcode.de}
+% \cleardoublepage
+% \pagenumbering{roman}
+% % \clearpage
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGES 3
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGES 4
+%----------------------------------------------------------------------------------------
+
+\vspace*{\fill}
+
+\noindent Accepted by the Faculty of Medicine, the Faculty of Science and the Vetsuisse Faculty of the University of Bern at the request of the Graduate School for Cellular and Biomedical Sciences
+
+\vspace{3cm}
+
+\noindent Bern, 	Dean of the Faculty of Medicine
+
+\vspace{3cm}
+
+\noindent Bern, 	Dean of the Faculty of Science
+
+\vspace{3cm}
+
+\noindent Bern, 	Dean of the Vetsuisse Faculty Bern
+
+\vspace{3cm}
+
+\vspace*{\fill}
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam bibendum, mi non lacinia aliquet, orci nisi commodo ex, ac malesuada nunc libero eget metus. Proin vel enim risus. Nullam lobortis posuere sodales. Quisque ac placerat sapien. Praesent in pulvinar dolor. Pellentesque faucibus quam at dui consectetur scelerisque. Donec laoreet pharetra neque, id cursus metus venenatis eu. Quisque tempor molestie velit, ac euismod ligula ullamcorper a. Aliquam lacus ligula, ultrices id vehicula et, hendrerit non turpis. Phasellus molestie erat quis sem iaculis, sed posuere metus tempus. Nullam suscipit lorem et accumsan convallis. Cras eleifend mauris ultrices nunc hendrerit condimentum. 
+\\
+\textbf{Keywords --} \keywordnames
+\\ ~ \\ ~ \\ ~ \\
+\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\begin{acknowledgements}
+\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam bibendum, mi non lacinia aliquet, orci nisi commodo ex, ac malesuada nunc libero eget metus. Proin vel enim risus. Nullam lobortis posuere sodales. Quisque ac placerat sapien. Praesent in pulvinar dolor. Pellentesque faucibus quam at dui consectetur scelerisque. Donec laoreet pharetra neque, id cursus metus venenatis eu. Quisque tempor molestie velit, ac euismod ligula ullamcorper a. Aliquam lacus ligula, ultrices id vehicula et, hendrerit non turpis. Phasellus molestie erat quis sem iaculis, sed posuere metus tempus. Nullam suscipit lorem et accumsan convallis. Cras eleifend mauris ultrices nunc hendrerit condimentum. 
+\end{acknowledgements}
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Prints the main table of contents
+
+% \listoffigures % Prints the list of figures
+
+% \listoftables % Prints the list of tables
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
+\end{abbreviations}
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+\dedicatory{Dedication}
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+
+\include{Chapters/Chapter1/Chapter1}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\printbibliography[heading=bibintoc]
+
+%----------------------------------------------------------------------------------------
+%	BACK PAGES - Declaration of Originality
+%----------------------------------------------------------------------------------------
+
+\begin{declaration}
+\addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
+
+\vspace{1cm}
+
+\noindent {\large \bfseries Last name, first name: \authorname \par} \vspace{0.5cm}
+
+\noindent {\large \bfseries Matriculation number: \matriculationnum \par} \vspace{2cm}
+
+{\noindent I  hereby  declare  that  this  thesis represents my  original  work and  that  I  have  used  no  other sources except as noted by citations.\\
+All  data,  tables,  figures  and  text  citations  which  have  been  reproduced  from  any  other source, including the internet, have been explicitly acknowledged as such.\\
+I am aware that in case of non-compliance, the Senate is entitled to withdraw the doctorate degree awarded to me on the basis of the present thesis, in accordance with the “Statut der Universität Bern (Universitätsstatut; UniSt)”, Art. 69, of 7 June 2011.\par} \vspace{1cm}
+ 
+ 
+\noindent {Place, Date:\par} \vspace{1cm}
+\noindent {Signature:\par}
+\end{declaration}
+
+\end{document}  
